@@ -41,11 +41,25 @@ return {
         })
         require('mason').setup({})
         require('mason-lspconfig').setup({
+            ensure_installed = {},
             handlers = {
                 function(server_name)
                     require('lspconfig')[server_name].setup({})
                 end,
             },
         })
+    --     require("lspconfig").jsonls.setup {
+    --         settings = {
+    --             json = {
+    --                 schemas = {
+    --                     {
+    --                         description = "TypeScript compiler configuration file",
+    --                         fileMatch = { "tsconfig.json", "tsconfig.*.json" },
+    --                         url = "https://json.schemastore.org/tsconfig.json"
+    --                     },
+    --                 },
+    --             },
+    --         },
+    --     }
     end
 }
